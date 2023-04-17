@@ -22,8 +22,17 @@ function Contact() {
     router.push("/phoneOtp");
   };
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen p-4 lg:p-24">
-      <div className="bg-white p-10 shadow-lg rounded-3xl w-full mx-auto sm:w-full sm:px-4 md:w-full md:px-8 lg:w-6/12">
+    <main className="flex flex-col items-center justify-center min-h-screen p-4 lg:p-24  ">
+      <div className="items-center justify-start  pb-12">
+        <img
+          src="/images/Bigstore Logo.png"
+          alt="Bigstore Logo "
+          className=""
+          style={{ width: "350px", height: "120px" }}
+        />
+      </div>
+
+      <div className="bg-white p-10 shadow-lg rounded-3xl w-full mx-auto sm:w-full sm:px-4 md:w-full md:px-8 lg:w-6/12 ">
         <div className="items-center justify-center">
           <h4 className="text-center font-bold text-2xl">
             What’s your phone number?

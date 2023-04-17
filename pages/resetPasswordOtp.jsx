@@ -3,14 +3,14 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Terms from "@/components/Terms";
 
-function phoneOtp() {
+function resetPasswordOtp() {
   const handleSubmit = (event) => {
     const router = useRouter();
     event.preventDefault();
     // handle phone number submission here using Next.js APIs
     // ...
     // redirect to the OTP verification page
-    router.push("/password");
+    router.push("/newPassword");
   };
   return (
     <main className="flex flex-col items-center justify-center min-h-screen  p-4 lg:p-24">
@@ -22,7 +22,7 @@ function phoneOtp() {
           style={{ width: "350px", height: "120px" }}
         />
       </div>
-      
+
       <div className="bg-white p-10 shadow-lg rounded-3xl w-full  sm:w-full sm:px-4 md:w-full md:px-8 lg:w-1/2">
         <div className="items-center justify-center">
           <h4 className="text-center font-semibold text-2xl">
@@ -34,7 +34,7 @@ function phoneOtp() {
           <div className="flex flex-col lg:flex-row my-6 justify-between lg:items-center ">
             <h6 className="font-bold text-sm lg:mr-4">+254 700 222 111</h6>
             <Link href="/contact" className="text-[#2F80ED] text-sm lg:ml-4">
-              Not you? Edit phone number
+              Wrong number? Edit it
             </Link>
           </div>
         </div>
@@ -44,7 +44,7 @@ function phoneOtp() {
               required
               placeholder="OTP"
               type="number"
-              className="bg-[#D9E0E5] rounded-full mx-2 p-6 w-full border  "
+              className="bg-[#F4F4F4] rounded-full mx-2 p-6 w-full border  "
             />
           </div>
 
@@ -60,4 +60,4 @@ function phoneOtp() {
   );
 }
 
-export default phoneOtp;
+export default resetPasswordOtp;

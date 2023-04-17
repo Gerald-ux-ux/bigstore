@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { CheckCircleIcon } from "@heroicons/react/20/solid";
 import Terms from "@/components/Terms";
 
-function password() {
+function newPassword() {
   const [iconColor, setIconColor] = useState("#8B96A5");
 
   const handleClick = () => {
@@ -16,7 +16,7 @@ function password() {
     // handle phone number submission here using Next.js APIs
     // ...
     // redirect to the OTP verification page
-    router.push("/");
+    router.push("");
   };
   return (
     <main className="flex flex-col items-center justify-center min-h-screen p-4 lg:p-24">
@@ -28,28 +28,35 @@ function password() {
           style={{ width: "350px", height: "120px" }}
         />
       </div>
+
       <div className="bg-white p-10 shadow-lg rounded-3xl w-full  mx-auto sm:w-full sm:px-4 md:w-full md:px-8 lg:w-1/2">
         <div className="items-center justify-center">
           <h4 className="text-center font-semibold text-2xl">
-            Good to see you back!
+            Set up a new password
           </h4>
           <h6 className="text-base text-center">
-            Type in your password to log back in to your account linked to
+            Create a strong password in order to keep your account secure
           </h6>
           <div className="flex flex-col lg:flex-row my-6 justify-between lg:items-center">
             <h6 className="font-bold text-sm lg:mr-4">+254 700 222 111</h6>
             <Link href="/contact" className="text-[#2F80ED] text-sm lg:ml-4">
-              Not you? Edit phone number
+              Wrong number? Edit it
             </Link>
           </div>
         </div>
         <form onSubmit={handleSubmit}>
-          <div className="flex flex-row my-6 justify-center items-center">
+          <div className=" my-6 justify-center items-center">
             <input
               required
-              placeholder="Password"
+              placeholder="New Password"
               type="password"
-              className="bg-[#D9E0E5] focus:border-[#EF363A] focus:ring-1 focus:ring-[#EF363A] rounded-full  mx-2 p-6 w-full"
+              className="bg-[#F4F4F4] focus:border-[#EF363A] focus:ring-1 focus:ring-[#EF363A] rounded-full  mx-2 p-6 w-full"
+            />
+            <input
+              required
+              placeholder="Confirm Password"
+              type="password"
+              className="bg-[#F4F4F4] my-6 focus:border-[#EF363A] focus:ring-1 focus:ring-[#EF363A] rounded-full  mx-2 p-6 w-full"
             />
           </div>
           <div className="flex flex-col lg:flex-row my-6 lg:relative lg:items-center">
@@ -60,14 +67,7 @@ function password() {
               <CheckCircleIcon className="h-6 w-6   text-[#8B96A5]" />
             </div>
 
-            <h6 className=" text-sm lg:mr-4  ">Remember me on this device</h6>
-            <Link
-              href="/resetPassword"
-              className="text-[#2F80ED] text-sm lg:ml-4 lg:right-0 lg:absolute "
-            >
-              {" "}
-              Forgot your password?
-            </Link>
+            <h6 className=" text-sm lg:mr-4 ">Remember me on this device</h6>
           </div>
           <div className="mx-auto w-3/4 lg:w-1/2">
             <button className="bg-[#EF363A] text-white p-4 rounded-full w-full">
@@ -81,4 +81,4 @@ function password() {
   );
 }
 
-export default password;
+export default newPassword;
