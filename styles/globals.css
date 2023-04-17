@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 244, 244, 244; /* changed value */
+  --background-end-rgb: 244, 244, 244; /* changed value */
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .item {
+    width: 50%;
+  }
+}
+
+/* Media query for screens smaller than 480px */
+@media (max-width: 480px) {
+  .item {
+    width: 100%;
+  }
+}
+
+  @media screen and (min-width: 768px) {
+    .bg-white {
+      max-width: 768px;
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .bg-white {
+      max-width: 1024px;
+    }
+  }
+
+@font-face {
+  font-family: 'Axiforma';
+  src: url('../public/fonts/Axiforma-font/Axiforma-Bold.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Axiforma';
+  src: url('../public/fonts/Axiforma-font/Axiforma-Light.ttf');
+  font-weight: light;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Axiforma';
+  src: url('../public/fonts/Axiforma-font/Axiforma-SemiBold.ttf');
+  font-weight: semi-bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Axiforma';
+  src: url('../public/fonts/Axiforma-font/Axiforma-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+
+input:focus {
+  border-color: #EF363A;
+   outline: none;
+}
