@@ -21,7 +21,7 @@ function resetPassword() {
     router.push("/resetPasswordOtp");
   };
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen p-4 lg:p-24">
+    <main className="flex flex-col items-center  bg-[#F4F4F4] justify-center min-h-screen p-4 lg:p-24">
       <div className="items-center justify-start  pb-12">
         <img
           src="/images/Bigstore Logo.png"

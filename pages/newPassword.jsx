@@ -42,7 +42,7 @@ function newPassword() {
   };
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen p-4 lg:p-24">
+    <main className="flex flex-col  bg-[#F4F4F4] items-center justify-center min-h-screen p-4 lg:p-24">
       <div className="items-center justify-start  pb-12">
         <img
           src="/images/Bigstore Logo.png"
@@ -99,7 +99,9 @@ function newPassword() {
               )}
             </div>
 
-            <h6 className=" text-sm justify-center items-center lg:mr-4 ">Remember me on this device</h6>
+            <h6 className=" text-sm justify-center items-center lg:mr-4 ">
+              Remember me on this device
+            </h6>
           </div>
           <div className="mx-auto w-3/4 lg:w-1/2">
             <button className="bg-[#EF363A] text-white p-4 rounded-full w-full">

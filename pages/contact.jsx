@@ -22,7 +22,7 @@ function Contact() {
     router.push("/phoneOtp");
   };
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen p-4 lg:p-24  ">
+    <main className="flex flex-col items-center justify-center bg-[#F4F4F4] min-h-screen p-4 lg:p-24  ">
       <div className="items-center justify-start  pb-12">
         <img
           src="/images/Bigstore Logo.png"
@@ -50,7 +50,6 @@ function Contact() {
                 className="w-6 h-6 mr-2 rounded-full"
               />
               <h6 className="text-center">+254</h6>
-             
             </div>
 
             <input
