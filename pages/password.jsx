@@ -1,15 +1,14 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { CheckCircleIcon } from "@heroicons/react/20/solid";
+import { CheckIcon } from "@heroicons/react/20/solid";
 import Terms from "@/components/Terms";
 
 function password() {
-  const [iconColor, setIconColor] = useState("#8B96A5");
-
-  const handleClick = () => {
-    setIconColor("#EF363A");
-  };
+ const [checked, setChecked] = useState(false);
+ const handleCheckboxChange = () => {
+   setChecked(!checked);
+ };
   const router = useRouter();
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -49,15 +48,19 @@ function password() {
               required
               placeholder="Password"
               type="password"
-              className="bg-[#D9E0E5] focus:border-[#EF363A] focus:ring-1 focus:ring-[#EF363A] rounded-full  mx-2 p-6 w-full"
+              className="bg-[#F4F4F4] focus:border-[#EF363A] focus:ring-1 focus:ring-[#EF363A] rounded-full  mx-2 p-6 w-full"
             />
           </div>
           <div className="flex flex-col lg:flex-row my-6 lg:relative lg:items-center">
             <div
-              className={`text-${iconColor} cursor-pointer items-start`}
-              onClick={handleClick}
+              className={`rounded w-5 h-5   flex items-center justify-center border border-gray-400 mr-2 ${
+                checked ? "bg-[#EF363A] border-[#EF363A]" : ""
+              }`}
+              onClick={handleCheckboxChange}
             >
-              <CheckCircleIcon className="h-6 w-6   text-[#8B96A5]" />
+              {checked && (
+                <CheckIcon className="w-4 h-4 text-white" aria-hidden="true" />
+              )}
             </div>
 
             <h6 className=" text-sm lg:mr-4  ">Remember me on this device</h6>

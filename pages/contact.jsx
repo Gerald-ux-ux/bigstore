@@ -1,15 +1,15 @@
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import React, { useState } from "react";
-import { ChevronDownIcon, CheckCircleIcon } from "@heroicons/react/20/solid";
+import { ChevronDownIcon, CheckIcon } from "@heroicons/react/20/solid";
 import Terms from "@/components/Terms";
+import ReactFlagsSelect from "react-flags-select";
 
 function Contact() {
-  const [iconColor, setIconColor] = useState("#8B96A5");
-
-  const handleClick = () => {
-    setIconColor("#EF363A");
-  };
+  const [checked, setChecked] = useState(false);
+   const handleCheckboxChange = () => {
+     setChecked(!checked);
+   };
 
 
   const router = useRouter();
@@ -43,22 +43,32 @@ function Contact() {
         </div>
         <form onSubmit={handleSubmit}>
           <div className="flex flex-row py-4 justify-center items-center ">
-            <div className="bg-[#D9E0E5] p-6  rounded-full rounded-e-none flex flex-row justify-center items-center">
-              <h6 className="justify-center text-start">+254</h6>
-              <ChevronDownIcon className="h-6 w-6 text-[#1C1C1C]" />
+            <div className="bg-[#F4F4F4] p-4 sm:p-6 md:p-8 lg:p-6 w-full   sm:w-3/12 rounded-full justify-center rounded-e-none flex flex-row items-center">
+              <img
+                src="/images/kenya.png"
+                alt="Kenya Flag"
+                className="w-6 h-6 mr-2 rounded-full"
+              />
+              <h6 className="text-center">+254</h6>
+             
             </div>
+
             <input
               required
               type="number"
-              className="bg-[#D9E0E5] rounded-full focus:border-[#EF363A] focus:ring-1 focus:ring-[#EF363A] rounded-s-none mx-2 p-6 w-full"
+              className="bg-[#F4F4F4] rounded-full  focus:border-[#EF363A] focus:ring-1 focus:ring-[#EF363A] rounded-s-none mx-2 lg:p-6 sm:p-6 md:p-8 p-4 w-full"
             />
           </div>
-          <div className="flex flex-row pb-4 justify-center items-center">
+          <div className="flex flex-row pb-4 justify-start items-center">
             <div
-              className={`text-${iconColor} cursor-pointer`}
-              onClick={handleClick}
+              className={`rounded w-5 h-5   flex items-center justify-center border border-gray-400 mr-2 ${
+                checked ? "bg-[#EF363A] border-[#EF363A]" : ""
+              }`}
+              onClick={handleCheckboxChange}
             >
-              <CheckCircleIcon className="h-6 w-6 mx-1 text-[#8B96A5]" />
+              {checked && (
+                <CheckIcon className="w-4 h-4 text-white" aria-hidden="true" />
+              )}
             </div>
 
             <p className="text-sm text-[#1C1C1C]">
@@ -79,7 +89,7 @@ function Contact() {
           </div>
         </form>
         <div className="items-center justify-center pt-4">
-          <Link href="">
+          <Link href="/signUp">
             <h6 className="text-center text-[#EF363A] text-base">
               Log in or register using email address
             </h6>

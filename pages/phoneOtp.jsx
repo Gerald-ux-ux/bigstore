@@ -4,8 +4,8 @@ import Link from "next/link";
 import Terms from "@/components/Terms";
 
 function phoneOtp() {
+  const router = useRouter();
   const handleSubmit = (event) => {
-    const router = useRouter();
     event.preventDefault();
     // handle phone number submission here using Next.js APIs
     // ...
@@ -22,7 +22,7 @@ function phoneOtp() {
           style={{ width: "350px", height: "120px" }}
         />
       </div>
-      
+
       <div className="bg-white p-10 shadow-lg rounded-3xl w-full  sm:w-full sm:px-4 md:w-full md:px-8 lg:w-1/2">
         <div className="items-center justify-center">
           <h4 className="text-center font-semibold text-2xl">
@@ -44,7 +44,7 @@ function phoneOtp() {
               required
               placeholder="OTP"
               type="number"
-              className="bg-[#D9E0E5] rounded-full mx-2 p-6 w-full border  "
+              className="bg-[#F4F4F4] rounded-full mx-2 p-6 w-full border  "
             />
           </div>
 

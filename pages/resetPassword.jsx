@@ -53,14 +53,18 @@ function resetPassword() {
 
           <form onSubmit={handleSubmit}>
             <div className="flex flex-row my-6 justify-center items-center ">
-              <div className="bg-[#D9E0E5] p-6 w-3/12  rounded-full rounded-e-none flex flex-row justify-center items-center">
-                <h6 className="justify-center text-start">+254</h6>
-                <ChevronDownIcon className="h-6 w-6 text-[#1C1C1C]" />
+              <div className="bg-[#F4F4F4] p-4 sm:p-6 md:p-8 lg:p-6 w-full   sm:w-3/12 rounded-full justify-center rounded-e-none flex flex-row items-center">
+                <img
+                  src="/images/kenya.png"
+                  alt="Kenya Flag"
+                  className="w-6 h-6 mr-2 rounded-full"
+                />
+                <h6 className="text-center">+254</h6>
               </div>
               <input
                 required
                 type="number"
-                className="bg-[#D9E0E5] rounded-full focus:border-[#EF363A] focus:ring-1 focus:ring-[#EF363A] rounded-s-none mx-2 p-6 w-full"
+                className="bg-[#F4F4F4] rounded-full  focus:border-[#EF363A] focus:ring-1 focus:ring-[#EF363A] rounded-s-none mx-2 lg:p-6 sm:p-6 md:p-8 p-4 w-full"
               />
             </div>
 
