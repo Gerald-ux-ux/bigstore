@@ -15,63 +15,74 @@ function Navbar() {
 
   return (
     <>
-      <nav className="flex flex-col items-center  lg:flex-row lg:justify-center w-full flex-wrap  p-2">
+      <nav className="flex flex-col items-center justify-between w-full flex-wrap p-2">
         {/* Desktop Menu */}
-        <div className="flex items-center  lg:flex-row lg:justify-evenly w-full flex-wrap  p-2">
-          <div className="flex items-center space-x-4">
-            <div className="block sm:hidden mt-2 ">
+        <div className="flex items-center lg:flex-row lg:justify-between w-10/12 flex-wrap p-2">
+          <div className="flex items-center space-x-2 my-4 sm:my-0">
+            <div className="block sm:hidden  mt-1">
               {isOpen ? (
                 <XMarkIcon
-                  className="h-6 w-6 text-[#1C1C1C] "
+                  className="h-6 w-6 text-[#1C1C1C]"
                   onClick={toggle}
                 />
               ) : (
                 <Bars3Icon
-                  className="h-6 w-6 text-[#1C1C1C] "
+                  className="h-6 w-6 text-[#1C1C1C]"
                   onClick={toggle}
                 />
               )}
             </div>
+
+            {/* Show the first image on small screens */}
             <img
               src="/images/Bigstore Logo (1).png"
               alt="Bigstore Logo"
-              className=" items-center "
-     
+              className="block sm:hidden  items-center"
             />
-            {/* <img
+
+            {/* Show the second image on large screens */}
+            <img
               src="/images/Bigstore Logo.png"
               alt="Bigstore Logo"
-              className=" items-center "
+              className="hidden sm:block items-center"
               style={{ width: "150px", height: "50px" }}
-            /> */}
+            />
+
+            <div className="flex right-8 absolute sm:hidden items-center">
+              <HeartIcon className="h-5 w-5 text-[#8B96A5] mx-2" />
+              <ShoppingCartIcon className="h-5 w-5 text-[#8B96A5] mx-2" />
+              <UserIcon className="h-5 w-5 text-[#8B96A5] mx-2" />
+            </div>
           </div>
 
-          <div className="flex justify-center ">
+          <div className="flex justify-center">
             <input
               type="search"
               id="search"
-              className="bg-gray-100 focus:border-red-500 focus:ring-1 focus:ring-red-500 rounded-full placeholder-gray-500 py-2 px-6  w-full"
+              className="bg-gray-100 focus:border-red-500 focus:ring-1 focus:ring-red-500 rounded-full placeholder-gray-500 py-2 px-6 w-full"
               placeholder="Search for products"
             />
             <button
               type="button"
-              className="text-sm ml-2 font-medium bg-[#EF363A] justify-between text-white p-2 w-4/12  rounded-full"
+              className="text-sm ml-2 font-medium bg-[#EF363A] justify-between text-white p-2 w-4/12 rounded-full"
               onClick={() => console.log("search")}
             >
               Search
             </button>
           </div>
 
-          <div className="flex  items-center">
-            <MapPinIcon className="h-6 w-6 text-[#EF363A]   " />
-            <h6 className="ml-1 text-[#666666] text-sm   font-semibold">
-              Garden Estate
-            </h6>
-          </div>
-          <div className="flex items-center  ">
-            <HeartIcon className="h-6 w-6 text-[#8B96A5]  " />
-            <ShoppingCartIcon className="h-6 w-6 text-[#8B96A5] " />
-            <UserIcon className="h-6 w-6 text-[#8B96A5]" />
+          <div className="hidden sm:flex justify-between space-x-4 items-center ">
+            <div className="flex items-center">
+              <MapPinIcon className="h-6 w-6 text-[#EF363A]" />
+              <h6 className="ml-1 text-[#666666] text-sm font-semibold">
+                Garden Estate
+              </h6>
+            </div>
+            <div className="flex items-center">
+              <HeartIcon className="h-6 w-6 text-[#8B96A5]" />
+              <ShoppingCartIcon className="h-6 w-6 text-[#8B96A5]" />
+              <UserIcon className="h-6 w-6 text-[#8B96A5]" />
+            </div>
           </div>
         </div>
       </nav>
@@ -81,12 +92,12 @@ function Navbar() {
       <nav
         className={
           isOpen
-            ? "flex-col items-center w-full block sm:flex absolute top-16 left-0 right-0 bottom-0  bg-[#F5F5F5]"
-            : "flex-col items-center w-full hidden sm:flex flex-wrap p-2g"
+            ? "flex-col items-center w-full block sm:flex absolute top-16 left-0 right-0 bottom-0 rounded-t-lg bg-[#F5F5F5]"
+            : "flex-col items-center justify-between hidden sm:flex  p-2"
         }
       >
-        <ul className="flex-col items-center justify-center space-y-4 ml-4 mt-4 mr-4 sm:space-y-8 sm:flex-row md:flex-wrap md:justify-center lg:flex lg:justify-center lg:space-x-4 xl:space-x-2">
-          <li className="bg-[#D9E0E5] rounded-full flex p-3">
+        <ul className="flex-col  sm:space-y-1 space-y-4 ml-4  mr-4 mt-2  sm:flex-row md:flex-wrap md:justify-center lg:flex lg:justify-center lg:space-x-4 xl:space-x-2">
+          <li className="bg-[#D9E0E5] rounded-full flex mt-1  p-3">
             <Link href="/">Phones & Tablets</Link>
             <ChevronDownIcon className="h-6 w-6" />
           </li>
