@@ -20,6 +20,8 @@
     "react-flags-select": "^2.2.3",
     "react-icons": "^4.8.0",
     "react-select": "^5.7.2",
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1",
     "tailwindcss": "3.3.1"
   }
 }

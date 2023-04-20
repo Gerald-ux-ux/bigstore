@@ -55,11 +55,11 @@ function Navbar() {
             </div>
           </div>
 
-          <div className="flex justify-center">
+          <div className="flex sm:w-6/12 justify-center">
             <input
               type="search"
               id="search"
-              className="bg-gray-100 focus:border-red-500 focus:ring-1 focus:ring-red-500 rounded-full placeholder-gray-500 py-2 px-6 w-full"
+              className="bg-gray-100 focus:border-red-500 focus:ring-1  focus:ring-red-500 rounded-full placeholder-gray-500 py-2 px-6 w-full"
               placeholder="Search for products"
             />
             <button
@@ -85,51 +85,50 @@ function Navbar() {
             </div>
           </div>
         </div>
+        <div
+          className={
+            isOpen
+              ? "flex-col items-center w-full block sm:flex absolute top-16 left-0 right-0 bottom-0 rounded-t-lg bg-[#F5F5F5]"
+              : "flex-col items-center justify-between  hidden sm:flex  p-2"
+          }
+        >
+          <ul className="flex-col  sm:space-y-1 space-y-4 ml-4  mr-4 mt-2 sm:flex-row md:flex-wrap md:justify-center lg:flex lg:justify-center lg:space-x-1 ">
+            <li className="bg-[#D9E0E5] rounded-full flex mt-1  p-2">
+              <Link href="/">Phones & Tablets</Link>
+              <ChevronDownIcon className="h-6 w-6" />
+            </li>
+            <li className="bg-[#D9E0E5] rounded-full   flex p-2">
+              <Link href="/">Televisions</Link>
+              <ChevronDownIcon className="h-6 w-6" />
+            </li>
+            <li className="bg-[#D9E0E5] rounded-full flex p-2">
+              <Link href="/">Audio & Sound</Link>
+              <ChevronDownIcon className="h-6 w-6" />
+            </li>
+            <li className="bg-[#D9E0E5] rounded-full flex p-2">
+              <Link href="/">Computers & Laptops</Link>
+              <ChevronDownIcon className="h-6 w-6" />
+            </li>
+            <li className="bg-[#D9E0E5] rounded-full flex p-2">
+              <Link href="/">Gaming Consoles</Link>
+              <ChevronDownIcon className="h-6 w-6" />
+            </li>
+            <li className="bg-[#D9E0E5] rounded-full flex p-2">
+              <Link href="/">Kitchen & Home</Link>
+              <ChevronDownIcon className="h-6 w-6" />
+            </li>
+            <li className="bg-[#D9E0E5] rounded-full flex p-2">
+              <Link href="/">Accessories</Link>
+              <ChevronDownIcon className="h-6 w-6" />
+            </li>
+            <li className="bg-[#D9E0E5] rounded-full flex p-2">
+              <Link href="/">Sale</Link>
+            </li>
+          </ul>
+        </div>
       </nav>
 
       {/* Mobile Menu */}
-
-      <nav
-        className={
-          isOpen
-            ? "flex-col items-center w-full block sm:flex absolute top-16 left-0 right-0 bottom-0 rounded-t-lg bg-[#F5F5F5]"
-            : "flex-col items-center justify-between hidden sm:flex  p-2"
-        }
-      >
-        <ul className="flex-col  sm:space-y-1 space-y-4 ml-4  mr-4 mt-2  sm:flex-row md:flex-wrap md:justify-center lg:flex lg:justify-center lg:space-x-4 xl:space-x-2">
-          <li className="bg-[#D9E0E5] rounded-full flex mt-1  p-3">
-            <Link href="/">Phones & Tablets</Link>
-            <ChevronDownIcon className="h-6 w-6" />
-          </li>
-          <li className="bg-[#D9E0E5] rounded-full flex p-3">
-            <Link href="/">Televisions</Link>
-            <ChevronDownIcon className="h-6 w-6" />
-          </li>
-          <li className="bg-[#D9E0E5] rounded-full flex p-3">
-            <Link href="/">Audio & Sound</Link>
-            <ChevronDownIcon className="h-6 w-6" />
-          </li>
-          <li className="bg-[#D9E0E5] rounded-full flex p-3">
-            <Link href="/">Computers & Laptops</Link>
-            <ChevronDownIcon className="h-6 w-6" />
-          </li>
-          <li className="bg-[#D9E0E5] rounded-full flex p-3">
-            <Link href="/">Gaming Consoles</Link>
-            <ChevronDownIcon className="h-6 w-6" />
-          </li>
-          <li className="bg-[#D9E0E5] rounded-full flex p-3">
-            <Link href="/">Kitchen & Home</Link>
-            <ChevronDownIcon className="h-6 w-6" />
-          </li>
-          <li className="bg-[#D9E0E5] rounded-full flex p-3">
-            <Link href="/">Accessories</Link>
-            <ChevronDownIcon className="h-6 w-6" />
-          </li>
-          <li className="bg-[#D9E0E5] rounded-full flex p-3">
-            <Link href="/">Sale</Link>
-          </li>
-        </ul>
-      </nav>
     </>
   );
 }
