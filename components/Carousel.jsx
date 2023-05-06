@@ -25,25 +25,26 @@ function Carousel() {
     { src: "/images/img3.png", alt: "slider 3" },
   ];
 
-    return (
+  return (
+    <>
       <div className="relative ">
-        
-      <Slider {...settings}>
-        {images.map((image, index) => (
-          <Slide src={image.src} alt={image.alt} key={index} />
-        ))}
-      </Slider>
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2">
-        {images.map((image, index) => (
-          <div
-            key={index}
-            className={`w-3 h-3  rounded-full ${
-              activeIndex === index ? "bg-white" : "bg-gray-300"
-            } inline-block mx-2`}
-          />
-        ))}
+        <Slider {...settings}>
+          {images.map((image, index) => (
+            <Slide src={image.src} alt={image.alt} key={index} />
+          ))}
+        </Slider>
+        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2">
+          {images.map((image, index) => (
+            <div
+              key={index}
+              className={`w-3 h-3  rounded-full ${
+                activeIndex === index ? "bg-white" : "bg-gray-300"
+              } inline-block mx-2`}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

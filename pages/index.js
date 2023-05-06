@@ -3,12 +3,18 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Carousel from "@/components/Carousel";
+import Landing from "@/components/Landing";
+import Nav from "@/components/Nav";
+
 
 export default function Home() {
   return (
-    <div className="w-full  ">
+    <div className="flex  flex-col justify-center items-center  ">
       <Navbar />
-      <Carousel />
+      {/* <Nav/> */}
+
+      {/* <Carousel /> */}
+      <Landing />
     </div>
   );
 }

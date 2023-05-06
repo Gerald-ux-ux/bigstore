@@ -15,9 +15,9 @@ function Navbar() {
 
   return (
     <>
-      <nav className="flex flex-col items-center justify-between w-full flex-wrap p-2">
+      <div className="flex flex-col items-center justify-between max-w-8xl w-full flex-wrap p-2">
         {/* Desktop Menu */}
-        <div className="flex items-center lg:flex-row lg:justify-between w-10/12 flex-wrap p-2">
+        <div className="flex items-center gap-9 lg:flex-row lg:justify-between w-10/12 flex-wrap p-2">
           <div className="flex items-center space-x-2 my-4 sm:my-0">
             <div className="block sm:hidden  mt-1">
               {isOpen ? (
@@ -89,11 +89,11 @@ function Navbar() {
           className={
             isOpen
               ? "flex-col items-center w-full block sm:flex absolute top-16 left-0 right-0 bottom-0 rounded-t-lg bg-[#F5F5F5]"
-              : "flex-col items-center justify-between  hidden sm:flex  p-2"
+              : "flex-col items-center justify-center  hidden lg:flex  p-2"
           }
         >
-          <ul className="flex-col  sm:space-y-1 space-y-4 ml-4  mr-4 mt-2 sm:flex-row md:flex-wrap md:justify-center lg:flex lg:justify-center lg:space-x-1 ">
-            <li className="bg-[#D9E0E5] rounded-full flex mt-1  p-2">
+          <ul className="flex-col  sm:space-y-1 space-y-4 ml-4  mr-4 mt-2 sm:flex-row md:flex-wrap md:justify-center lg:flex lg:justify-center gap-1 ">
+            <li className="bg-[#D9E0E5] rounded-full flex mt-1   p-2">
               <Link href="/">Phones & Tablets</Link>
               <ChevronDownIcon className="h-6 w-6" />
             </li>
@@ -126,7 +126,7 @@ function Navbar() {
             </li>
           </ul>
         </div>
-      </nav>
+      </div>
 
       {/* Mobile Menu */}
     </>
