@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Carousel from "@/components/Carousel";
 import Landing from "@/components/Landing";
 import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
 
 
 export default function Home() {

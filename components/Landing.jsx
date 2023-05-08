@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { HeartIcon, ShoppingCartIcon } from "@heroicons/react/20/solid";
+import Footer from "./Footer";
 
 function Landing() {
   const [categories, setCategories] = useState([]);
@@ -109,6 +110,7 @@ function Landing() {
           </div>
         ))}
       </div>
+      <Footer />
     </div>
   );
 }
