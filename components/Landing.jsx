@@ -4,6 +4,7 @@ import { HeartIcon, ShoppingCartIcon } from "@heroicons/react/20/solid";
 function Landing() {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
+   const [loading, setLoading] = useState(true);
 
   // Products fetch
   useEffect(() => {
@@ -11,6 +12,7 @@ function Landing() {
       const res = await fetch("/api/products");
       const data = await res.json();
       setProducts(data);
+       setLoading(false);
     }
 
     fetchData(); // <-- add this line
@@ -26,17 +28,22 @@ function Landing() {
 
     fetchData();
   }, []);
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+  
   return (
     <div className="flex flex-col w-10/12 ">
       <div className=" hidden lg:flex border-b-2 flex-col">
         <img src="/images/div.png" />
       </div>
 
-      <div className="mt-3  relative ">
+      <div className="mt-3  ">
         <h3 className="text-[#EF363A] font-bold border-b-2 text-2xl">
           Our Top Categories
         </h3>
-        <div className="absolute bottom-0 left-0 w-3/12 h-0.5 bg-[#EF363A]"></div>
+        {/* <div className="absolute bottom-0 left-0 w-3/12 h-0.5 bg-[#EF363A]"></div> */}
       </div>
       {/* Mapped data */}
       {/* <div className="flex bg-[#F5F5F5] mt-6 ">
@@ -77,14 +84,14 @@ function Landing() {
             key={product.node.id}
             className="bg-white shadow rounded-2xl p-4"
           >
-            {product.node.images.map((image) => (
+            {product.node.thumbnail && (
               <img
-                key={image.url}
-                src={image.url}
+                key={product.node.thumbnail.url}
+                src={product.node.thumbnail.url}
                 alt={product.node.name}
                 className="w-full mb-4 object-contain"
               />
-            ))}
+            )}
             <div className="flex items-center">
               <div className="rounded-full h-8 w-8   bg-[#D9E0E5]">
                 <HeartIcon className="h-6 w-6 text-[#EF363A]" />
@@ -94,9 +101,7 @@ function Landing() {
               </div>
             </div>
             <h2 className="text-lg font-medium">{product.node.name}</h2>
-            <p className="text-sm mb-2">
-              {product.node.category.name}
-            </p>
+            <p className="text-sm mb-2">{product.node.category.name}</p>
             <p className="text-lg font-medium">
               Price: {product.node.pricing.priceRange.start.gross.amount}{" "}
               {product.node.pricing.priceRange.start.gross.currency}

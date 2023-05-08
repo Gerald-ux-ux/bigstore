@@ -7,6 +7,7 @@ const MY_QUERY = gql`
     products(channel: "default-channel", first: 100) {
       edges {
         node {
+          id
           category {
             id
             name
@@ -22,7 +23,7 @@ const MY_QUERY = gql`
               }
             }
           }
-          images {
+          thumbnail {
             url
           }
         }
