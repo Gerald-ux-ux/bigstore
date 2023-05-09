@@ -10,6 +10,7 @@ import {
 } from "@heroicons/react/20/solid";
 import { MapPinIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import ShoppingCart from "./Cart";
 
 const Categories = [
   {
@@ -58,6 +59,18 @@ const Categories = [
 
 function Navbar() {
   const [openCategory, setOpenCategory] = useState(null);
+  const [cart, setCart] = useState([]);
+  const [showCart, setShowCart] = useState(false);
+
+  // Add item to cart
+  const addItemToCart = (item) => {
+    setCart([...cart, item]);
+  };
+  
+  const onPress = () => {
+     navigation.navigate("shoppingCart");
+  }
+
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
@@ -73,8 +86,8 @@ function Navbar() {
     <>
       <div className="flex flex-col items-center justify-between max-w-8xl w-full flex-wrap p-2">
         {/* Desktop Menu */}
-        <div className="flex items-center gap-9 lg:flex-row lg:justify-between w-10/12 flex-wrap p-2">
-          <div className="flex items-center space-x-2 my-4 sm:my-0">
+        <div className="flex items-center gap-3 lg:flex-row lg:justify-between w-11/12 flex-wrap p-2">
+          <div className="flex items-center  my-4 sm:my-0">
             <div className="block sm:hidden  mt-1">
               {isOpen ? (
                 <XMarkIcon
@@ -104,11 +117,17 @@ function Navbar() {
               style={{ width: "150px", height: "50px" }}
             />
 
+            {/* Shopping cart icon */}
             <div className="flex right-8 absolute sm:hidden items-center">
               <HeartIcon className="h-5 w-5 text-[#8B96A5] mx-2" />
-              <ShoppingCartIcon className="h-5 w-5 text-[#8B96A5] mx-2" />
+              <ShoppingCartIcon
+                onClick={() => setShowCart(!showCart)}
+                className="h-5 w-5 text-[#8B96A5] mx-2"
+              />
               <UserIcon className="h-5 w-5 text-[#8B96A5] mx-2" />
             </div>
+
+            {/* Shopping cart sidebar */}
           </div>
 
           <div className="flex sm:w-6/12 justify-center">
@@ -135,20 +154,26 @@ function Navbar() {
               </h6>
             </div>
             <div className="flex items-center">
-              <HeartIcon className="h-6 w-6 text-[#8B96A5]" />
-              <ShoppingCartIcon className="h-6 w-6 text-[#8B96A5]" />
-              <UserIcon className="h-6 w-6 text-[#8B96A5]" />
+              <HeartIcon className="h-6 w-6 text-[#8B96A5] cursor-pointer" />
+              <Link href="/shoppingCart">
+                <ShoppingCartIcon
+                  // onClick={() => setShowCart(!showCart)}
+                  className="h-6 w-6 text-[#8B96A5] cursor-pointer"
+                />
+              </Link>
+
+              <ShoppingCart cart={cart} showCart={showCart} />
+              <UserIcon className="h-6 w-6 text-[#8B96A5] cursor-pointer" />
             </div>
           </div>
         </div>
 
-        
         {/* Categories Menu */}
         <div
           className={
             isOpen
-              ? "flex-col items-center w-full block sm:flex absolute top-16 left-0 right-0 bottom-0 rounded-t-lg bg-[#F5F5F5]"
-              : " flex-col w-10/12 p-2 justify-between lg:flex hidden "
+              ? "flex-col items-center w-full block sm:flex absolute top-16 left-0 right-0 bottom-0 rounded-t-lg bg-[#FFFFFF] "
+              : " flex-col w-11/12 mx-auto p-2 justify-between lg:flex hidden "
           }
         >
           {/* Categories */}

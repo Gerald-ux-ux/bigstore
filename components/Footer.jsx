@@ -1,12 +1,9 @@
-import React from "react";
-import {
-  HeartIcon,
-  ShoppingCartIcon,
-  ShareIcon,
-  PhoneIcon,
-} from "@heroicons/react/20/solid";
+import React, { useEffect, useState } from "react";
 import Year from "./Year";
 import Link from "next/link";
+import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
+import { PaperAirplaneIcon, PhoneIcon } from "@heroicons/react/20/solid";
+import BrandPromises from "./BrandPromises";
 
 const pages = [
   {
@@ -42,49 +39,27 @@ const support = [
 ];
 
 function Footer() {
-  return (
-    <div className="">
-      <div>
-        <h2 className="text-[#242424] font-semibold text-center border-b">
-          BigStore PARTNERS
-        </h2>
-      </div>
-      <div>
-        <img src="/images/Patners.png" alt="" />
-      </div>
-      <div className="flex  justify-between">
-        <img
-          src="/images/Items/go4.png"
-          alt=""
-          style={{ width: "50px", height: "50px" }}
-        />
-        <img
-          src="/images/Items/go3.png"
-          alt=""
-          style={{ width: "50px", height: "50px" }}
-        />
-        <img
-          src="/images/Items/go.png"
-          alt=""
-          style={{ width: "50px", height: "50px" }}
-        />
-        <img
-          src="/images/Items/go2.png"
-          alt=""
-          style={{ width: "50px", height: "50px" }}
-        />
-      </div>
+  const [isMounted, setIsMounted] = useState(false);
 
-      <div className="flex justify-between ">
-        <div className="">
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
+  return (
+    <>
+      <BrandPromises />
+      <div className="grid grid-cols-1 md:flex md:justify-between   md:w-11/12 gap-4 px-4 lg:px-0 space-y-8 ">
+        <div className="  ">
           <img
             src="/images/Bigstore Logo.png"
             alt="Bigstore Logo"
             className=" "
             style={{ width: "150px", height: "50px" }}
           />
-
-          <div className="flex">
+          <div className="flex my-8">
             <img
               src="/images/Facebook.png"
               alt=""
@@ -96,29 +71,26 @@ function Footer() {
               style={{ width: "24px", height: "24px" }}
             />
           </div>
-          <span className="">
-            <div className="flex items-center">
-              <ShareIcon className="h-6 w-6 text-[#333333]" />
-              <p className="pl-2 items-center">Nairobi Area 00600 Kenya</p>
-            </div>
+          <div className="flex items-center">
+            <PaperAirplaneIcon className="h-6 w-6 text-[#333333]" />
+            <p className="pl-2 items-center">Nairobi Area 00600 Kenya</p>
+          </div>
 
-            <div className="flex items-center ">
-              <PhoneIcon className="h-6 w-6 text-[#333333]" />
-              <p className="pl-2 items-center">Phone: 0711 999 036</p>
-            </div>
-          </span>
+          <div className="flex   ">
+            <PhoneIcon className="h-6 w-6 text-[#333333]" />
+            <p className="pl-2 text-center">Phone: 0711 999 036</p>
+          </div>
         </div>
-
-        <div className="flex flex-col">
+        <div className="flex flex-col space-y-4 ">
           {pages.map((page) => {
             return (
               <p
                 key={page.title}
-                className="ml-8 text-[#333333] flex flex-col text-sm font-semibold"
+                className="  text-[#333333]  text-sm font-semibold"
               >
                 {page.header}
                 <Link href={`/${page.title}`}>
-                  <p className="text-sm font-thin m-2 text-[#777777]">
+                  <p className="text-sm font-thin justify-between  text-[#777777]">
                     {page.title}
                   </p>
                 </Link>
@@ -126,16 +98,16 @@ function Footer() {
             );
           })}
         </div>
-        <div className="flex flex-col  ">
+        <div className="flex flex-col space-y-4 ">
           {support.map((support) => {
             return (
               <p
                 key={support.title}
-                className="ml-8 text-[#333333] text-start justify-start text-sm font-semibold"
+                className=" text-[#333333]  text-sm font-semibold"
               >
                 {support.header}
                 <Link href={`/${support.title}`}>
-                  <p className="text-sm font-thin m-2  text-[#777777]">
+                  <p className="text-sm font-thin  text-[#777777]">
                     {support.title}
                   </p>
                 </Link>
@@ -144,9 +116,8 @@ function Footer() {
           })}
         </div>
       </div>
-
       <Year />
-    </div>
+    </>
   );
 }
 

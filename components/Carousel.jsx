@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -16,18 +16,22 @@ function Carousel() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true, // enable autoplay
+    autoplaySpeed: 3000, // set interval to 3 seconds (3000 milliseconds)
     beforeChange: (current, next) => setActiveIndex(next),
   };
 
   const images = [
-    { src: "/images/img1.png", alt: "slider 1" },
-    { src: "/images/img2.png", alt: "slider 2" },
-    { src: "/images/img3.png", alt: "slider 3" },
+    { src: "/images/Home/GO BIG SOUND.png", alt: "slider 1" },
+    { src: "/images/Home/GO BIG SMARTPHONES.png", alt: "slider 2" },
+    { src: "/images/Home/GO BIG DISCOUNTS.png", alt: "slider 3" },
   ];
+
+ 
 
   return (
     <>
-      <div className="relative ">
+      <div className="relative  ">
         <Slider {...settings}>
           {images.map((image, index) => (
             <Slide src={image.src} alt={image.alt} key={index} />

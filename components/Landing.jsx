@@ -1,11 +1,15 @@
 import { useState, useEffect } from "react";
 import { HeartIcon, ShoppingCartIcon } from "@heroicons/react/20/solid";
 import Footer from "./Footer";
+import Carousel from "./Carousel";
+import Icons from "./Icons";
+import Cartegories from "./Cartegories";
+import TopCategories from "./TopCategories";
 
 function Landing() {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
-   const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   // Products fetch
   useEffect(() => {
@@ -13,7 +17,7 @@ function Landing() {
       const res = await fetch("/api/products");
       const data = await res.json();
       setProducts(data);
-       setLoading(false);
+      setLoading(false);
     }
 
     fetchData(); // <-- add this line
@@ -33,19 +37,15 @@ function Landing() {
   if (loading) {
     return <p>Loading...</p>;
   }
-  
-  return (
-    <div className="flex flex-col w-10/12 ">
-      <div className=" hidden lg:flex border-b-2 flex-col">
-        <img src="/images/div.png" />
-      </div>
 
-      <div className="mt-3  ">
-        <h3 className="text-[#EF363A] font-bold border-b-2 text-2xl">
-          Our Top Categories
-        </h3>
-        {/* <div className="absolute bottom-0 left-0 w-3/12 h-0.5 bg-[#EF363A]"></div> */}
-      </div>
+  return (
+    <div className="flex  flex-col w-11/12 ">
+      <Carousel />
+      <Icons />
+      <TopCategories />
+      <Cartegories />
+      {/* <div className="absolute bottom-0 left-0 w-3/12 h-0.5 bg-[#EF363A]"></div> */}
+
       {/* Mapped data */}
       {/* <div className="flex bg-[#F5F5F5] mt-6 ">
         <div>
@@ -110,7 +110,9 @@ function Landing() {
           </div>
         ))}
       </div>
-      <Footer />
+      <div className="my-8">
+        <Footer />
+      </div>
     </div>
   );
 }
