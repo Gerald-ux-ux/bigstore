@@ -5,10 +5,10 @@ import { CheckIcon } from "@heroicons/react/20/solid";
 import Terms from "@/components/Terms";
 
 function password() {
- const [checked, setChecked] = useState(false);
- const handleCheckboxChange = () => {
-   setChecked(!checked);
- };
+  const [checked, setChecked] = useState(false);
+  const handleCheckboxChange = () => {
+    setChecked(!checked);
+  };
   const router = useRouter();
   const handleSubmit = (event) => {
     event.preventDefault();

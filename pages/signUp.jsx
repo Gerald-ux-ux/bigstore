@@ -5,7 +5,6 @@ import { CheckIcon } from "@heroicons/react/20/solid";
 import Terms from "@/components/Terms";
 
 function signUp() {
-  
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");

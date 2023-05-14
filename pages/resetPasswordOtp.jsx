@@ -4,9 +4,8 @@ import Link from "next/link";
 import Terms from "@/components/Terms";
 
 function resetPasswordOtp() {
-    const router = useRouter();
+  const router = useRouter();
   const handleSubmit = (event) => {
-  
     event.preventDefault();
     // handle phone number submission here using Next.js APIs
     // ...

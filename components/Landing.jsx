@@ -5,6 +5,11 @@ import Carousel from "./Carousel";
 import Icons from "./Icons";
 import Cartegories from "./Cartegories";
 import TopCategories from "./TopCategories";
+import Products from "./Products";
+import BigstorePartners from "./BigstorePartners";
+import SalesCategories from "./SalesCategories";
+import BigstoreHeadphones from "./BigstoreHeadphones";
+import NewArivals from "./NewArivals";
 
 function Landing() {
   const [categories, setCategories] = useState([]);
@@ -43,6 +48,7 @@ function Landing() {
       <Carousel />
       <Icons />
       <TopCategories />
+      <NewArivals />
       <Cartegories />
       {/* <div className="absolute bottom-0 left-0 w-3/12 h-0.5 bg-[#EF363A]"></div> */}
 
@@ -79,40 +85,17 @@ function Landing() {
       </div> */}
 
       {/* All Products */}
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-4 px-4 lg:px-0">
-        {products.map((product) => (
-          <div
-            key={product.node.id}
-            className="bg-white shadow rounded-2xl p-4"
-          >
-            {product.node.thumbnail && (
-              <img
-                key={product.node.thumbnail.url}
-                src={product.node.thumbnail.url}
-                alt={product.node.name}
-                className="w-full mb-4 object-contain"
-              />
-            )}
-            <div className="flex items-center">
-              <div className="rounded-full h-8 w-8   bg-[#D9E0E5]">
-                <HeartIcon className="h-6 w-6 text-[#EF363A]" />
-              </div>
-              <div className="rounded-full h-8 w-8 bg-[#D9E0E5] ">
-                <ShoppingCartIcon className="h-6 w-6 text-[#EF363A]" />
-              </div>
-            </div>
-            <h2 className="text-lg font-medium">{product.node.name}</h2>
-            <p className="text-sm mb-2">{product.node.category.name}</p>
-            <p className="text-lg font-medium">
-              Price: {product.node.pricing.priceRange.start.gross.amount}{" "}
-              {product.node.pricing.priceRange.start.gross.currency}
-            </p>
-          </div>
-        ))}
-      </div>
-      <div className="my-8">
-        <Footer />
-      </div>
+      <Products />
+      <BigstoreHeadphones />
+      <button class="text-sm p-4 mb-4 rounded-full text-[#EC1A57] md:text-white space-y-2  mx-auto  md:bg-[#EC1A57]  mt-6  md:w-1/2 lg:w-2/12">
+        <a href="/products" className="font-semibold">
+          VIEW ALL DEALS
+        </a>
+      </button>
+      <SalesCategories />
+
+      <BigstorePartners />
+      <Footer />
     </div>
   );
 }

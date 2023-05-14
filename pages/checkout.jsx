@@ -1,11 +1,12 @@
-import React from 'react';
+import Footer from "@/components/Footer";
+import React from "react";
 
-function checkout() {
+function checkOut() {
   return (
-    <div>
-      
+    <div className="flex flex-col justify-between w-11/12">
+      <Footer />
     </div>
   );
 }
 
-export default checkout;
+export default checkOut;

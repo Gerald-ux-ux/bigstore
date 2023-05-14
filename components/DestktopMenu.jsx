@@ -1,12 +1,6 @@
-import React, { useState } from "react";
-import {
-  ChevronDownIcon,
-  ChevronUpIcon,
-  Bars3Icon,
-  XMarkIcon,
-} from "@heroicons/react/20/solid";
-
+import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
+import React, { useState } from "react";
 
 const Categories = [
   {
@@ -52,11 +46,9 @@ const Categories = [
   },
 ];
 
-function Nav() {
+function DestktopMenu() {
+    
   const [openCategory, setOpenCategory] = useState(null);
-  const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => setIsOpen(!isOpen);
-
   const toggleSubmenu = (index) => {
     if (openCategory === index) {
       setOpenCategory(null);
@@ -64,34 +56,21 @@ function Nav() {
       setOpenCategory(index);
     }
   };
-
   return (
-    <div
-      className={
-        isOpen
-          ? "flex-col items-center w-full block sm:flex absolute top-16 left-0 right-0 bottom-0 rounded-t-lg bg-[#F5F5F5]"
-          : " flex-col w-10/12 p-2 justify-between lg:flex "
-      }
-    >
-      <div className="block sm:hidden  mt-1">
-        {isOpen ? (
-          <XMarkIcon className="h-6 w-6 text-[#1C1C1C]" onClick={toggle} />
-        ) : (
-          <Bars3Icon className="h-6 w-6 text-[#1C1C1C]" onClick={toggle} />
-        )}
-      </div>
-      {/* Categories */}
-      <ul className="relative justify-between cursor-pointer flex flex-col lg:flex-row">
+    <div className=" flex-col    md:w-11/12 mx-auto p-2 justify-between lg:flex hidden ">
+      <ul className="relative justify-between  cursor-pointer flex flex-col lg:flex-row">
         {Categories.map((category, index) => (
           <li
             key={category.name}
-            className="bg-[#D9E0E5] rounded-full flex mt-1 p-2"
+            className="bg-[#D9E0E5] inline-flex text-xs  rounded-full mt-1 p-2"
           >
             <div
               onClick={() => toggleSubmenu(index)}
               className="flex items-center"
             >
-              <span className="mr-1">{category.name}</span>
+              <span className="inline-flex items-center mr-1">
+                {category.name}
+              </span>
               {openCategory === index ? (
                 <ChevronUpIcon className="h-6 w-6" />
               ) : (
@@ -99,7 +78,7 @@ function Nav() {
               )}
             </div>
             {openCategory === index && (
-              <ul className="absolute top-full  w-4/12 bg-white rounded-2xl py-1 px-2">
+              <ul className="absolute top-full w-1/12 z-50 bg-white rounded-2xl py-1 px-2">
                 {category.subcategories.map((subcategory) => (
                   <li className="p-1" key={subcategory}>
                     <Link href={`/${subcategory}`}>{subcategory}</Link>
@@ -114,4 +93,4 @@ function Nav() {
   );
 }
 
-export default Nav;
+export default DestktopMenu;

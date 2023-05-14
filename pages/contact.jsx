@@ -7,10 +7,9 @@ import ReactFlagsSelect from "react-flags-select";
 
 function Contact() {
   const [checked, setChecked] = useState(false);
-   const handleCheckboxChange = () => {
-     setChecked(!checked);
-   };
-
+  const handleCheckboxChange = () => {
+    setChecked(!checked);
+  };
 
   const router = useRouter();
 

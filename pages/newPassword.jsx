@@ -5,18 +5,15 @@ import { CheckIcon } from "@heroicons/react/20/solid";
 import Terms from "@/components/Terms";
 
 function newPassword() {
-
-
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
- 
 
- const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState(false);
 
- const handleCheckboxChange = () => {
-   setChecked(!checked);
- };
+  const handleCheckboxChange = () => {
+    setChecked(!checked);
+  };
   const router = useRouter();
 
   const checkPasswordMatch = () => {
@@ -35,8 +32,7 @@ function newPassword() {
       // ...
       // redirect to the OTP verification page
       router.push("/");
-    }
-    else{
+    } else {
       window.location.reload();
     }
   };

@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
 function Icons() {
   return (
-    <div className="flex justify-between mt-4 mb-4 border-b pb-2">
+    <div className=" justify-between mt-4 mb-4 border-b pb-2 hidden md:flex">
       <div className="flex border-r pr-2">
         <img
           src="/images/Home/Icons/Group.png"
