@@ -23,8 +23,7 @@ function password() {
         <img
           src="/images/Bigstore Logo.png"
           alt="Bigstore Logo "
-          className=""
-          style={{ width: "350px", height: "120px" }}
+          className="w-25 h-20 "
         />
       </div>
       <div className="bg-white p-10 shadow-lg rounded-3xl w-full  mx-auto sm:w-full sm:px-4 md:w-full md:px-8 lg:w-1/2">

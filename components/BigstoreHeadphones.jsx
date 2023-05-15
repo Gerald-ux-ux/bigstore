@@ -1,5 +1,6 @@
 import { HeartIcon, ShoppingCartIcon } from "@heroicons/react/20/solid";
 import React, { useEffect, useState } from "react";
+import Loading from "./Loading";
 
 function BigstoreHeadphones() {
      useEffect(() => {
@@ -17,7 +18,9 @@ function BigstoreHeadphones() {
   const [loading, setLoading] = useState(true);
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <div>
+      <Loading/>
+    </div>;
   }
   return (
     <>

@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Year from "./Year";
 import Link from "next/link";
-import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
-import { PaperAirplaneIcon, PhoneIcon } from "@heroicons/react/20/solid";
-import BrandPromises from "./BrandPromises";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLocationArrow, faPhone } from "@fortawesome/free-solid-svg-icons";
 
 const pages = [
   {
@@ -72,12 +71,18 @@ function Footer() {
               />
             </div>
             <div className="flex items-center">
-              <PaperAirplaneIcon className="h-6 w-6 text-[#333333]" />
+              <FontAwesomeIcon
+                icon={faLocationArrow}
+                className="text-lg text-[#333] md:text-xl"
+              />
               <p className="pl-2 items-center">Nairobi Area 00600 Kenya</p>
             </div>
 
             <div className="flex   ">
-              <PhoneIcon className="h-6 w-6 text-[#333333]" />
+              <FontAwesomeIcon
+                icon={faPhone}
+                className="text-lg text-[#333] md:text-xl"
+              />
               <p className="pl-2 text-center">Phone: 0711 999 036</p>
             </div>
           </div>

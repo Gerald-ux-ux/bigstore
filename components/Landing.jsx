@@ -9,9 +9,11 @@ import Products from "./Products";
 import BigstorePartners from "./BigstorePartners";
 import SalesCategories from "./SalesCategories";
 import BigstoreHeadphones from "./BigstoreHeadphones";
-import NewArivals from "./NewArivals";
 import BrandPromises from "./BrandPromises";
 import BigstoreFooterImg from "./BigstoreFooterImg";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Loading from "./Loading";
 
 function Landing() {
   const [categories, setCategories] = useState([]);
@@ -41,16 +43,20 @@ function Landing() {
     fetchData();
   }, []);
 
-  if (loading) {
-    return <p>Loading...</p>;
-  }
+ if (loading) {
+   return (
+     <div>
+      <Loading/>
+     </div>
+   );
+ }
+
 
   return (
     <div className="flex  flex-col w-11/12 ">
       <Carousel />
       <Icons />
       <TopCategories />
-      <NewArivals />
       <Cartegories />
       {/* <div className="absolute bottom-0 left-0 w-3/12 h-0.5 bg-[#EF363A]"></div> */}
 

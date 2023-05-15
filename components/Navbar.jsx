@@ -44,11 +44,13 @@ function Navbar() {
         {/* Desktop Menu */}
         <div className="flex items-center gap-3 lg:flex-row lg:justify-between w-11/12 flex-wrap p-2">
           <div className="flex items-center  my-4 sm:my-0">
-            <img
-              src="/images/Bigstore Logo (1).png"
-              alt="Bigstore Logo"
-              className="block sm:hidden  items-center"
-            />
+            <Link href="/">
+              <img
+                src="/images/Bigstore Logo (1).png"
+                alt="Bigstore Logo"
+                className="block sm:hidden  items-center"
+              />
+            </Link>
 
             {/* Show the second image on large screens */}
 
@@ -66,7 +68,7 @@ function Navbar() {
               <HeartIcon className="h-5 w-5 text-[#8B96A5] mx-2" />
               <div className="flex relative flex-row justify-center">
                 <Link href="/shoppingCart">
-                  <ShoppingCartIcon className="h-6 w-6 text-[#8B96A5] cursor-pointer" />
+                  <ShoppingCartIcon className="h-5 w-5 text-[#8B96A5] cursor-pointer" />
                 </Link>
                 <div
                   style={{ fontSize: "9px" }}

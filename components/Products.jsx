@@ -1,6 +1,7 @@
 import { HeartIcon, ShoppingCartIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import Loading from "./Loading";
 
 function Products() {
   useEffect(() => {
@@ -11,14 +12,18 @@ function Products() {
       setLoading(false);
     }
 
-    fetchData(); 
+    fetchData();
   }, []);
 
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   if (loading) {
-    return <p>Loading...</p>;
+    return (
+      <div>
+        <Loading />
+      </div>
+    );
   }
   return (
     <div className="grid grid-cols-2 md:grid-cols-5 gap-4 px-4 lg:px-0">

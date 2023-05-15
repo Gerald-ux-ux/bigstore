@@ -78,7 +78,7 @@ function DestktopMenu() {
               )}
             </div>
             {openCategory === index && (
-              <ul className="absolute top-full w-1/12 z-50 bg-white rounded-2xl py-1 px-2">
+              <ul className="absolute top-full w-1/12 z-50 bg-white shadow rounded-2xl py-1 px-2">
                 {category.subcategories.map((subcategory) => (
                   <li className="p-1" key={subcategory}>
                     <Link href={`/${subcategory}`}>{subcategory}</Link>

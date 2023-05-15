@@ -26,8 +26,7 @@ function Contact() {
         <img
           src="/images/Bigstore Logo.png"
           alt="Bigstore Logo "
-          className=""
-          style={{ width: "350px", height: "120px" }}
+          className="w-25 h-20 "
         />
       </div>
 

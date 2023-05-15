@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import Loading from "./Loading";
 
 function Product() {
   const router = useRouter();
@@ -26,7 +27,7 @@ function Product() {
   if (loading) {
     return (
       <div>
-        <h1>Loading...</h1>
+        <Loading />
       </div>
     );
   }
@@ -50,7 +51,6 @@ function Product() {
             {product.pricing.priceRange.start.gross.currency}
           </p>
           <img src={product.thumbnail.url} alt={product.name} />
-
         </div>
       ))}
     </div>

@@ -48,7 +48,7 @@ function ConnectionStatus() {
               We’ve lost connection to the internet. <br />
               Try to reconnect to the internet, or
             </p>
-            <button onClick={() => window.location.reload()} className="text-sm p-2 rounded-full text-white mx-auto font-medium bg-[#EF363A] w-11/12  md:w-1/3">
+            <button onClick={() => window.location.reload()} className="text-sm p-2 rounded-full text-white mx-auto font-medium bg-[#EF363A] w-11/12  md:w-3/12">
               <p className="text-white font-medium text-center">Relod Page</p>
             </button>
             <Footer />
