@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 function SaleProducts() {
   useEffect(() => {
     async function fetchData() {
-      const res = await fetch("/api/products");
+      const res = await fetch("/api/queries/products");
       const data = await res.json();
       setProducts(data);
       setLoading(false);

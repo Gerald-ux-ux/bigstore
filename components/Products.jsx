@@ -1,10 +1,11 @@
 import { HeartIcon, ShoppingCartIcon } from "@heroicons/react/20/solid";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 function Products() {
   useEffect(() => {
     async function fetchData() {
-      const res = await fetch("/api/products");
+      const res = await fetch("/api/queries/products");
       const data = await res.json();
       setProducts(data);
       setLoading(false);
@@ -36,7 +37,9 @@ function Products() {
               <HeartIcon className="md:h-6 md:w-6 h-4 w-4 text-[#EF363A]" />
             </div>
             <div className="rounded-full md:h-8 md:w-8  h-6 w-6 bg-[#D9E0E5] ">
-              <ShoppingCartIcon className="md:h-6 md:w-6 h-4 w-4 text-[#EF363A]" />
+              <Link href={`/product/${product.id}`}>
+                <ShoppingCartIcon className="md:h-6 md:w-6 h-4 w-4 text-[#EF363A]" />
+              </Link>
             </div>
           </div>
           <h2 className="text-xs md:text-lg  font-medium">

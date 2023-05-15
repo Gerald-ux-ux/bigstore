@@ -8,21 +8,21 @@ import { MapPinIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import ShoppingCart from "./ShoppingCart";
 import DestktopMenu from "./DestktopMenu";
+import { useSelector, useDispatch } from "react-redux";
 import HambugerMenu from "./HambugerMenu";
+import {
+  increment,
+  decrement,
+  incrementByAmount,
+  selectValue,
+} from "@/slices/counterSlice";
 
 function Navbar() {
+  const dispatch = useDispatch();
+  const count = useSelector(selectValue);
+
   const [openCategory, setOpenCategory] = useState(null);
-  const [cart, setCart] = useState([]);
   const [showCart, setShowCart] = useState(false);
-
-  // Add item to cart
-  const addItemToCart = (item) => {
-    setCart([...cart, item]);
-  };
-
-  const onPress = () => {
-    navigation.navigate("shoppingCart");
-  };
 
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
@@ -64,15 +64,22 @@ function Navbar() {
             {/* Shopping cart icon */}
             <div className="flex right-8 absolute sm:hidden items-center">
               <HeartIcon className="h-5 w-5 text-[#8B96A5] mx-2" />
-              <ShoppingCartIcon
-                onClick={() => setShowCart(!showCart)}
-                className="h-5 w-5 text-[#8B96A5] mx-2"
-              />
-              <ShoppingCart
+              <div className="flex relative flex-row justify-center">
+                <Link href="/shoppingCart">
+                  <ShoppingCartIcon className="h-6 w-6 text-[#8B96A5] cursor-pointer" />
+                </Link>
+                <div
+                  style={{ fontSize: "9px" }}
+                  className="flex absolute -top-1  left-4 rounded-full justify-center items-center bg-[#EC1A57] text-white h-3 w-3 md:h-4 md:w-4"
+                >
+                  <p className="text-center mt-0.5 md:mt-1"> {count}</p>
+                </div>
+              </div>
+              {/* <ShoppingCart
                 cart={cart}
                 showCart={showCart}
                 onCloseCart={closeCart}
-              />
+              /> */}
 
               <UserIcon className="h-5 w-5 text-[#8B96A5] mx-2" />
             </div>
@@ -102,17 +109,22 @@ function Navbar() {
                 Garden Estate
               </h6>
             </div>
-            <div className="flex items-center">
+            <div className="flex relative items-center space-x-3">
               <HeartIcon className="h-6 w-6 text-[#8B96A5] cursor-pointer" />
               <div>
-                <Link href='/shoppingCart'>
-                  <ShoppingCartIcon
-                    // onClick={() => setShowCart(!showCart)}
-                    className="h-6 w-6 text-[#8B96A5] cursor-pointer"
-                  />
-                </Link>
+                <div className="flex relative flex-row justify-center">
+                  <Link href="/shoppingCart">
+                    <ShoppingCartIcon className="h-6 w-6 text-[#8B96A5] cursor-pointer" />
+                  </Link>
+                  <div
+                    style={{ fontSize: "9px" }}
+                    className="flex absolute -top-1  left-4 rounded-full justify-center items-center bg-[#EC1A57] text-white h-4 w-4"
+                  >
+                    <p className="text-center mt-1"> {count}</p>
+                  </div>
+                </div>
               </div>
-              <ShoppingCart cart={cart} showCart={showCart} />
+              {/* <ShoppingCart cart={cart} showCart={showCart} /> */}
               <UserIcon className="h-6 w-6 text-[#8B96A5] cursor-pointer" />
             </div>
           </div>

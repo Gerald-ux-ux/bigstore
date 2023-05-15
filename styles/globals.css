@@ -3,10 +3,7 @@
 @tailwind utilities;
 
 
-
-
-
-@media (max-width: 640px) {
+/* @media (max-width: 640px) {
   .mt-8 {
     margin-top: 4rem;
   }
@@ -26,10 +23,10 @@
   .item {
     width: 50%;
   }
-}
+} */
 
 /* Media query for screens smaller than 480px */
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   .item {
     width: 100%;
   }
@@ -45,7 +42,7 @@
     .bg-white {
       max-width: 1024px;
     }
-  }
+  } */
 
 @font-face {
   font-family: 'Axiforma';

@@ -50,7 +50,7 @@ function Footer() {
   return (
     <>
       <div className="flex justify-between flex-col w-11/12">
-        <BrandPromises />
+        {/* <BrandPromises /> */}
         <div className="grid grid-cols-1 md:flex md:justify-between space-y-8 ">
           <div className="  justify-center flex flex-col   ">
             <img

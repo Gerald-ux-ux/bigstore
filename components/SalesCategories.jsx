@@ -31,11 +31,11 @@ function SalesCategories() {
 
   return (
     <div className="md:flex hidden md:flex-col">
-      <div className="flex flex-row md:items-center md:justify-start space-x-4 border-b ">
-        <p className="text-xl text-center  font-semibold underline-offset-8 underline decoration-2 decoration-[#EC1A57] ">
+      <div className="flex flex-row md:items-center mb-4 md:justify-start space-x-4 border-b ">
+        <p className=" decoration-[#EC1A57] font-bold underline md:decoration-2 underline-offset-8 md:text-2xl ">
           BIGSTORE SALE
         </p>
-        <div className="flex overflow-x-auto overflow-hidden  ">
+        <div className="flex overflow-x-auto  overflow-hidden  ">
           {categories.map((category) => (
             <ul
               className={`px-2 py-1 rounded-md ${

@@ -10,6 +10,8 @@ import BigstorePartners from "./BigstorePartners";
 import SalesCategories from "./SalesCategories";
 import BigstoreHeadphones from "./BigstoreHeadphones";
 import NewArivals from "./NewArivals";
+import BrandPromises from "./BrandPromises";
+import BigstoreFooterImg from "./BigstoreFooterImg";
 
 function Landing() {
   const [categories, setCategories] = useState([]);
@@ -19,7 +21,7 @@ function Landing() {
   // Products fetch
   useEffect(() => {
     async function fetchData() {
-      const res = await fetch("/api/products");
+      const res = await fetch("/api/queries/products");
       const data = await res.json();
       setProducts(data);
       setLoading(false);
@@ -87,14 +89,18 @@ function Landing() {
       {/* All Products */}
       <Products />
       <BigstoreHeadphones />
-      <button class="text-sm p-4 mb-4 rounded-full text-[#EC1A57] md:text-white space-y-2  mx-auto  md:bg-[#EC1A57]  mt-6  md:w-1/2 lg:w-2/12">
-        <a href="/products" className="font-semibold">
-          VIEW ALL DEALS
-        </a>
-      </button>
-      <SalesCategories />
+      <div className="md:mb-4 md:mt-4">
+        <button class="text-sm p-4  rounded-full text-[#EC1A57] md:text-white space-y-2  mx-auto  md:bg-[#EC1A57]  flex items-center justify-center  w-11/12  md:w-2/12">
+          <a href="/products" className="font-semibold">
+            VIEW ALL DEALS
+          </a>
+        </button>
+      </div>
 
+      <SalesCategories />
+      <BigstoreFooterImg />
       <BigstorePartners />
+      <BrandPromises />
       <Footer />
     </div>
   );

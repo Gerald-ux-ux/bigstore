@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 function BigstoreHeadphones() {
      useEffect(() => {
     async function fetchData() {
-      const res = await fetch("/api/products");
+      const res = await fetch("/api/queries/products");
       const data = await res.json();
       setProducts(data);
       setLoading(false);
@@ -27,7 +27,7 @@ function BigstoreHeadphones() {
         </p>
       </div>
 
-      <div className="grid flex-col  grid-cols-2 space-x-4 justify-between space-y-2 md:grid-cols-4 ">
+      <div className="grid flex-col  grid-cols-2 space-x-4 justify-between  md:grid-cols-4 ">
         {products.slice(0, 4).map((product) => (
           <div
             key={product.node.id}
