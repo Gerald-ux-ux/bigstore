@@ -16,6 +16,7 @@ import {
   incrementByAmount,
   selectValue,
 } from "@/slices/counterSlice";
+import MobileMenu from "./MobileMenu";
 
 function Navbar() {
   const dispatch = useDispatch();
@@ -43,12 +44,13 @@ function Navbar() {
       <div className="flex flex-col items-center justify-between max-w-8xl w-full flex-wrap p-2">
         {/* Desktop Menu */}
         <div className="flex items-center gap-3 lg:flex-row lg:justify-between w-11/12 flex-wrap p-2">
-          <div className="flex items-center  my-4 sm:my-0">
+          <div className="flex items-center mt-4 sm:my-0">
+            <MobileMenu />
             <Link href="/">
               <img
-                src="/images/Bigstore Logo (1).png"
+                src="/images/Bigstore Mobile.svg"
                 alt="Bigstore Logo"
-                className="block sm:hidden  items-center"
+                className="block sm:hidden h-20 w-20  items-center"
               />
             </Link>
 

@@ -49,7 +49,7 @@ function Cart() {
             <p className="md:text-xl text-sm font-normal text-center">
               Looks like you haven’t added any items to your cart
             </p>
-            <button className="text-sm p-2 rounded-full text-white mx-auto font-medium bg-[#EF363A] w-full  md:w-2/3">
+            <button className="text-sm p-2 rounded-full text-white mx-auto font-medium bg-[#EF363A]  w-2/3">
               <a href="/">Continue Shopping</a>
             </button>
           </div>

@@ -48,12 +48,12 @@ function SaleProducts() {
                 className="w-full mb-4 object-contain"
               />
             )}
-            <div className="flex items-center">
-              <div className="rounded-full h-8 w-8   bg-[#D9E0E5]">
-                <HeartIcon className="h-6 w-6 text-[#EF363A]" />
+            <div className="flex items-center justify-between">
+              <div className="rounded-full flex items-center justify-center md:h-7 md:w-7  h-6 w-6 bg-[#D9E0E5]">
+                <HeartIcon className="  h-4 w-4 text-[#EF363A]" />
               </div>
-              <div className="rounded-full h-8 w-8 bg-[#D9E0E5] ">
-                <ShoppingCartIcon className="h-6 w-6 text-[#EF363A]" />
+              <div className="rounded-full md:h-7 md:w-7 flex items-center justify-center h-6 w-6 bg-[#D9E0E5]">
+                <ShoppingCartIcon className=" h-4 w-4 text-[#EF363A]" />
               </div>
             </div>
             <h2 className="text-xs md:text-lg  font-medium">

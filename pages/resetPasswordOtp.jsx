@@ -16,21 +16,21 @@ function resetPasswordOtp() {
     <main className="flex flex-col items-center  bg-[#F4F4F4] justify-center min-h-screen  p-4 lg:p-24">
       <div className="items-center justify-start  pb-12">
         <img
-          src="/images/Bigstore Logo.png"
+          src="/images/Bigstore Mobile.svg"
           alt="Bigstore Logo "
-          className="w-25 h-20 "
+          className="md:w-25 md:h-20 "
         />
       </div>
 
       <div className="bg-white p-10 shadow-lg rounded-3xl w-full  sm:w-full sm:px-4 md:w-full md:px-8 lg:w-1/2">
         <div className="items-center justify-center">
-          <h4 className="text-center font-semibold text-2xl">
+          <h4 className="text-center font-semibold text-lg md:text-2xl">
             We sent you a code
           </h4>
-          <h6 className="text-base text-center">
+          <h6 className="text-sm md:text-base text-start">
             Type in the code we sent to the number you just gave us
           </h6>
-          <div className="flex flex-col lg:flex-row my-6 justify-between lg:items-center ">
+          <div className="flex space-y-1 flex-col lg:flex-row my-6 justify-between lg:items-center ">
             <h6 className="font-bold text-sm lg:mr-4">+254 700 222 111</h6>
             <Link href="/contact" className="text-[#2F80ED] text-sm lg:ml-4">
               Wrong number? Edit it
@@ -43,12 +43,12 @@ function resetPasswordOtp() {
               required
               placeholder="OTP"
               type="number"
-              className="bg-[#F4F4F4] rounded-full mx-2 p-6 w-full border  "
+              className="bg-[#F4F4F4] rounded-full  focus:border-[#EF363A] focus:ring-1 focus:ring-[#EF363A]   md:p-6 p-4 w-full"
             />
           </div>
 
-          <div className="mx-auto w-3/4 lg:w-1/2">
-            <button className="bg-[#EF363A] text-white p-4 rounded-full w-full">
+          <div className="mx-auto flex justify-center w-10/12 lg:w-1/2">
+            <button className="bg-[#EF363A] text-white md:p-4 p-2 rounded-full w-full">
               Confirm
             </button>
           </div>

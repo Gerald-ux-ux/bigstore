@@ -24,23 +24,22 @@ function resetPassword() {
     <main className="flex flex-col items-center  bg-[#F4F4F4] justify-center min-h-screen p-4 lg:p-24">
       <div className="items-center justify-start  pb-12">
         <img
-          src="/images/Bigstore Logo.png"
+          src="/images/Bigstore Mobile.svg"
           alt="Bigstore Logo "
-          className="w-25 h-20 "
+          className="md:w-25 md:h-20 "
         />
       </div>
 
-      <div className="bg-white p-10 shadow-lg rounded-3xl w-full  mx-auto sm:w-full sm:px-4 md:w-full md:px-8 lg:w-1/2">
-        <div className="items-center justify-center">
-          <h4 className="text-center font-semibold text-2xl">
+      <div className="bg-white p-6 shadow-lg rounded-3xl w-full  mx-auto sm:w-full sm:px-4 md:w-full md:px-8 lg:w-1/2">
+        <div className="items-center space-y-1 justify-center">
+          <h4 className="text-center font-semibold text-lg md:text-2xl">
             Forgot your password? We got you
           </h4>
-          <h6 className="text-base text-center">
-            Let’s set you up with a new password.
+          <h6 className="text-sm md:text-base text-start">
+            Let’s set you up with a new password. <br /> But first, enter the
+            phone number linked to your account.
           </h6>
-          <h6 className="text-base text-center">
-            But first, enter the phone number linked to your account.
-          </h6>
+
           <div className="flex flex-col lg:flex-row my-6 justify-center lg:items-center">
             <Link
               href="/password"
@@ -52,7 +51,7 @@ function resetPassword() {
 
           <form onSubmit={handleSubmit}>
             <div className="flex flex-row my-6 justify-center items-center ">
-              <div className="bg-[#F4F4F4] p-4 sm:p-6 md:p-8 lg:p-6 w-full   sm:w-3/12 rounded-full justify-center rounded-e-none flex flex-row items-center">
+              <div className="bg-[#F4F4F4] p-4  md:p-6 md:w-3/12 w-5/12  rounded-full justify-center rounded-e-none flex flex-row items-center">
                 <img
                   src="/images/kenya.png"
                   alt="Kenya Flag"
@@ -63,12 +62,12 @@ function resetPassword() {
               <input
                 required
                 type="number"
-                className="bg-[#F4F4F4] rounded-full  focus:border-[#EF363A] focus:ring-1 focus:ring-[#EF363A] rounded-s-none mx-2 lg:p-6 sm:p-6 md:p-8 p-4 w-full"
+                className="bg-[#F4F4F4] rounded-full  focus:border-[#EF363A] focus:ring-1 focus:ring-[#EF363A] rounded-s-none mx-2  md:p-6 p-4 w-full"
               />
             </div>
 
-            <div className="mx-auto w-3/4 lg:w-1/2">
-              <button className="bg-[#EF363A] text-white p-4 rounded-full w-full">
+            <div className="mx-auto flex justify-center w-10/12 lg:w-1/2">
+              <button className="bg-[#EF363A] text-white md:p-4 p-2 rounded-full w-full">
                 Submit
               </button>
             </div>

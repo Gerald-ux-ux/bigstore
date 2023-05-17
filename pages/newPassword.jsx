@@ -41,18 +41,18 @@ function newPassword() {
     <main className="flex flex-col  bg-[#F4F4F4] items-center justify-center min-h-screen p-4 lg:p-24">
       <div className="items-center justify-start  pb-12">
         <img
-          src="/images/Bigstore Logo.png"
+          src="/images/Bigstore Mobile.svg"
           alt="Bigstore Logo "
-          className="w-25 h-20 "
+          className="md:w-25 md:h-20 "
         />
       </div>
 
       <div className="bg-white p-10 shadow-lg rounded-3xl w-full  mx-auto sm:w-full sm:px-4 md:w-full md:px-8 lg:w-1/2">
         <div className="items-center justify-center">
-          <h4 className="text-center font-semibold text-2xl">
+          <h4 className="text-center font-semibold text-lg md:text-2xl">
             Set up a new password
           </h4>
-          <h6 className="text-base text-center">
+          <h6 className=" text-sm font-normal md:text-base text-start">
             Create a strong password in order to keep your account secure
           </h6>
           <div className="flex flex-col lg:flex-row my-6 justify-between lg:items-center">
@@ -63,12 +63,12 @@ function newPassword() {
           </div>
         </div>
         <form onSubmit={handleSubmit}>
-          <div className=" my-6 justify-center items-center">
+          <div className=" my-6 space-y-4 justify-center items-center">
             <input
               required
               placeholder="New Password"
               type="password"
-              className="bg-[#F4F4F4] focus:border-[#EF363A] focus:ring-1 focus:ring-[#EF363A] rounded-full  mx-2 p-6 w-full"
+              className="bg-[#F4F4F4] focus:border-[#EF363A] focus:ring-1 focus:ring-[#EF363A] rounded-full p-4 md:p-6 w-full"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -76,15 +76,15 @@ function newPassword() {
               required
               placeholder="Confirm Password"
               type="password"
-              className="bg-[#F4F4F4] my-6 focus:border-[#EF363A] focus:ring-1 focus:ring-[#EF363A] rounded-full  mx-2 p-6 w-full"
+              className="bg-[#F4F4F4] focus:border-[#EF363A] focus:ring-1 focus:ring-[#EF363A] rounded-full p-4 md:p-6 w-full"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
           </div>
           {error && <div className="text-red-500 text-sm mb-4">{error}</div>}
-          <div className="flex flex-col lg:flex-row items-center my-6 lg:relative lg:items-center">
+          <div className="flex flex-row lg:flex-row justify-start items-center my-6 lg:relative lg:items-center">
             <div
-              className={`rounded-md w-5 h-5 flex items-center justify-center border border-gray-400 mr-2 ${
+              className={`rounded-md w-5 h-5 flex items-center justify-start border border-gray-400 mr-2 ${
                 checked ? "bg-[#EF363A] border-[#EF363A]" : ""
               }`}
               onClick={handleCheckboxChange}
@@ -94,13 +94,13 @@ function newPassword() {
               )}
             </div>
 
-            <h6 className=" text-sm justify-center items-center lg:mr-4 ">
+            <h6 className="text-xs md:text-sm lg:mr-4 ">
               Remember me on this device
             </h6>
           </div>
-          <div className="mx-auto w-3/4 lg:w-1/2">
-            <button className="bg-[#EF363A] text-white p-4 rounded-full w-full">
-              Log in
+          <div className="mx-auto w-10/12 lg:w-1/2">
+            <button className="bg-[#EF363A] text-white p-2 md:p-4 rounded-full w-full">
+              Submit
             </button>
           </div>
         </form>

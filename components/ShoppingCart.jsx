@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { XMarkIcon } from "@heroicons/react/20/solid";
 
-function ShoppingCart({ cart, showCart, closeCart }) {
-  const [hideCart, setHideCart] = useState(false);
+function ShoppingCart({ cart, showCart, }) {
+  const [hideCart, setHideCart] = useState(true);
   return (
     <>
       {showCart && (

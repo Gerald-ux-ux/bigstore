@@ -16,18 +16,18 @@ function phoneOtp() {
     <main className="flex flex-col items-center  bg-[#F4F4F4] justify-center min-h-screen  p-4 lg:p-24">
       <div className="items-center justify-start  pb-12">
         <img
-          src="/images/Bigstore Logo.png"
+          src="/images/Bigstore Mobile.svg"
           alt="Bigstore Logo "
-          className="w-25 h-20 "
+          className="md:w-25 md:h-20 "
         />
       </div>
 
-      <div className="bg-white p-10 shadow-lg rounded-3xl w-full  sm:w-full sm:px-4 md:w-full md:px-8 lg:w-1/2">
+      <div className="bg-white p-10 shadow-lg rounded-3xl  w-full md:w-1/2 ">
         <div className="items-center justify-center">
-          <h4 className="text-center font-semibold text-2xl">
+          <h4 className="text-center font-semibold text-lg md:text-2xl">
             We sent you a code
           </h4>
-          <h6 className="text-base text-center">
+          <h6 className="md:text-base text-xs text-center">
             Type in the code we sent to the number you just gave us
           </h6>
           <div className="flex flex-col lg:flex-row my-6 justify-between lg:items-center ">
@@ -37,18 +37,18 @@ function phoneOtp() {
             </Link>
           </div>
         </div>
-        <form onSubmit={handleSubmit}>
-          <div className="flex flex-row my-6 justify-center items-center">
+        <form className="" onSubmit={handleSubmit}>
+          <div className="flex  my-6 justify-start items-center">
             <input
               required
               placeholder="OTP"
               type="number"
-              className="bg-[#F4F4F4] rounded-full mx-2 p-6 w-full border  "
+              className="bg-[#F4F4F4] rounded-full  p-3 w-full  border  "
             />
           </div>
 
-          <div className="mx-auto w-3/4 lg:w-1/2">
-            <button className="bg-[#EF363A] text-white p-4 rounded-full w-full">
+          <div className="mx-auto flex justify-center w-10/12 lg:w-1/2">
+            <button className="bg-[#EF363A] text-white md:p-4 p-2 rounded-full w-full md:w2/3">
               Confirm
             </button>
           </div>

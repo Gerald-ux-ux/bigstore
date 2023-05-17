@@ -21,44 +21,44 @@ function Contact() {
     router.push("/phoneOtp");
   };
   return (
-    <main className="flex flex-col items-center justify-center bg-[#F4F4F4] min-h-screen p-4 lg:p-24  ">
+    <main className="flex flex-col items-center justify-center bg-[#F4F4F4] min-h-screen p-4 md:p-24  ">
       <div className="items-center justify-start  pb-12">
         <img
-          src="/images/Bigstore Logo.png"
+          src="/images/Bigstore Mobile.svg"
           alt="Bigstore Logo "
-          className="w-25 h-20 "
+          className="md:w-25 md:h-20 "
         />
       </div>
 
-      <div className="bg-white p-10 shadow-lg rounded-3xl w-full mx-auto sm:w-full sm:px-4 md:w-full md:px-8 lg:w-6/12 ">
+      <div className="bg-white p-10 shadow-lg rounded-3xl w-full mx-auto  md:w-1/2 ">
         <div className="items-center justify-center">
-          <h4 className="text-center font-bold text-2xl">
+          <h4 className="text-center font-semibold  text-lg md:text-2xl">
             What’s your phone number?
           </h4>
-          <h6 className="text-base text-center">
+          <h6 className="md:text-base text-sm text-center">
             Type in your phone number to log in or create a new account.
           </h6>
         </div>
         <form onSubmit={handleSubmit}>
           <div className="flex flex-row py-4 justify-center items-center ">
-            <div className="bg-[#F4F4F4] p-4 sm:p-6 md:p-8 lg:p-6 w-full   sm:w-3/12 rounded-full justify-center rounded-e-none flex flex-row items-center">
+            <div className="bg-[#F4F4F4] p-4  md:p-6 md:w-3/12 w-5/12  rounded-full justify-center rounded-e-none flex flex-row items-center">
               <img
                 src="/images/kenya.png"
                 alt="Kenya Flag"
                 className="w-6 h-6 mr-2 rounded-full"
               />
-              <h6 className="text-center">+254</h6>
+              <h6 className="text-center text-sm">+254</h6>
             </div>
 
             <input
               required
               type="number"
-              className="bg-[#F4F4F4] rounded-full  focus:border-[#EF363A] focus:ring-1 focus:ring-[#EF363A] rounded-s-none mx-2 lg:p-6 sm:p-6 md:p-8 p-4 w-full"
+              className="bg-[#F4F4F4] rounded-full  focus:border-[#EF363A] focus:ring-1 focus:ring-[#EF363A] rounded-s-none mx-2  md:p-6 p-4 w-full"
             />
           </div>
-          <div className="flex flex-row pb-4 justify-start items-center">
+          <div className="flex  flex-row pb-4 justify-start items-center">
             <div
-              className={`rounded w-5 h-5   flex items-center justify-center border border-gray-400 mr-2 ${
+              className={`rounded w-6 h-4 md:w-5 md:h-5  flex items-center justify-center border border-gray-400 mr-2 ${
                 checked ? "bg-[#EF363A] border-[#EF363A]" : ""
               }`}
               onClick={handleCheckboxChange}
@@ -68,7 +68,7 @@ function Contact() {
               )}
             </div>
 
-            <p className="text-sm text-[#1C1C1C]">
+            <p className="text-sm font-normal text-[#1C1C1C]">
               I have read and agree to the{" "}
               <Link href="/terms" className="text-[#2F80ED]">
                 Terms and conditions
@@ -79,15 +79,15 @@ function Contact() {
               </Link>
             </p>
           </div>
-          <div className="mx-auto w-3/4 lg:w-1/2">
-            <button className="bg-[#EF363A] text-white p-4 rounded-full w-full">
+          <div className="mx-auto flex justify-center w-10/12 lg:w-1/2">
+            <button className="bg-[#EF363A] text-white md:p-4 p-2 rounded-full w-2/3">
               Continue
             </button>
           </div>
         </form>
         <div className="items-center justify-center pt-4">
           <Link href="/signUp">
-            <h6 className="text-center text-[#EF363A] text-base">
+            <h6 className="text-center text-[#EF363A] text-sm md:text-base">
               Log in or register using email address
             </h6>
           </Link>

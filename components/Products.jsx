@@ -37,13 +37,13 @@ function Products() {
               className="w-full mb-4 text-xs md:text-lg  object-contain"
             />
           )}
-          <div className="flex items-center">
-            <div className="rounded-full md:h-8 md:w-8  h-6 w-6 bg-[#D9E0E5]">
-              <HeartIcon className="md:h-6 md:w-6 h-4 w-4 text-[#EF363A]" />
+          <div className="flex items-center justify-between">
+            <div className="rounded-full flex items-center justify-center md:h-7 md:w-7  h-6 w-6 bg-[#D9E0E5]">
+              <HeartIcon className="  h-4 w-4 text-[#EF363A]" />
             </div>
-            <div className="rounded-full md:h-8 md:w-8  h-6 w-6 bg-[#D9E0E5] ">
+            <div className="rounded-full md:h-7 md:w-7 flex items-center justify-center h-6 w-6 bg-[#D9E0E5]">
               <Link href={`/product/${product.id}`}>
-                <ShoppingCartIcon className="md:h-6 md:w-6 h-4 w-4 text-[#EF363A]" />
+                <ShoppingCartIcon className=" h-4 w-4 text-[#EF363A]" />
               </Link>
             </div>
           </div>
