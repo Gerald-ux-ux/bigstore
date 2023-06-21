@@ -14,6 +14,7 @@ import BigstoreFooterImg from "./BigstoreFooterImg";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Loading from "./Loading";
+import Link from "next/link";
 
 function Landing() {
   const [categories, setCategories] = useState([]);
@@ -43,14 +44,13 @@ function Landing() {
     fetchData();
   }, []);
 
- if (loading) {
-   return (
-     <div>
-      <Loading/>
-     </div>
-   );
- }
-
+  if (loading) {
+    return (
+      <div>
+        <Loading />
+      </div>
+    );
+  }
 
   return (
     <div className="flex  flex-col w-11/12 ">
@@ -96,11 +96,11 @@ function Landing() {
       <Products />
       <BigstoreHeadphones />
       <div className="md:mb-4 md:mt-4">
-        <button class="text-sm p-4  rounded-full text-[#EC1A57] md:text-white space-y-2  mx-auto  md:bg-[#EC1A57]  flex items-center justify-center  w-11/12  md:w-2/12">
-          <a href="/products" className="font-semibold">
+        <Link href="/products" passHref>
+          <button className="text-sm p-4  rounded-full text-[#EC1A57] md:text-white space-y-2  mx-auto  md:bg-[#EC1A57]  flex items-center justify-center  w-11/12  md:w-2/12">
             VIEW ALL DEALS
-          </a>
-        </button>
+          </button>
+        </Link>
       </div>
 
       <SalesCategories />

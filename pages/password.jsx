@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { CheckIcon } from "@heroicons/react/20/solid";
 import Terms from "@/components/Terms";
+import Image from "next/image";
 
 function password() {
   const [checked, setChecked] = useState(false);
@@ -20,10 +21,12 @@ function password() {
   return (
     <main className="flex flex-col items-center  bg-[#F4F4F4] justify-center min-h-screen p-4 lg:p-24">
       <div className="items-center justify-start  pb-12">
-        <img
+        <Image
           src="/images/Bigstore Mobile.svg"
           alt="Bigstore Logo "
           className="md:w-25 md:h-20 "
+          width={200} // Set the width value based on the actual image width
+          height={20} // Set the height value based on the actual image height
         />
       </div>
       <div className="bg-white p-10 shadow-lg rounded-3xl w-full  mx-auto sm:w-full sm:px-4 md:w-full md:px-8 lg:w-1/2">
@@ -65,7 +68,9 @@ function password() {
                   />
                 )}
               </div>
-              <h6 className="text-xs ml-1 md:text-sm">Remember me on this device</h6>
+              <h6 className="text-xs ml-1 md:text-sm">
+                Remember me on this device
+              </h6>
             </div>
             <div className="mt-2 flex items-center lg:mt-0">
               <Link

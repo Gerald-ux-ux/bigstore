@@ -36,7 +36,7 @@ function Cart() {
     <div className="flex justify-center items-center flex-col">
       {cartItems.length === 0 ? (
         <div>
-          <div className="flex flex-col items-center justify-center md:space-y-10 space-y-4 mb-6 ">
+          <div className="flex flex-col items-center justify-center md:space-y-14 space-y-8 mb-6 ">
             <img
               src="/images/Artwork.png"
               className="w-20 mt-8 h-20 md:w-40 md:h-40"

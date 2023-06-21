@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { XMarkIcon } from "@heroicons/react/20/solid";
+import Link from "next/link";
 
-function ShoppingCart({ cart, showCart, }) {
+function ShoppingCart({ cart, showCart }) {
   const [hideCart, setHideCart] = useState(true);
   return (
     <>
@@ -25,20 +26,22 @@ function ShoppingCart({ cart, showCart, }) {
                       {cart.length === 0 ? (
                         <div className="flex flex-col justify-center items-center space-y-8">
                           <button className="p-2 w-10/12 bg-[#F4F4F4]  rounded-full ">
-                            <a
-                              className="text-[#EF363A] text-sm "
+                            <Link
+                              className="text-[#EF363A] text-sm"
+                              passHref
                               href="/shoppingCart"
                             >
                               View cart
-                            </a>
+                            </Link>
                           </button>
                           <button className=" p-2 w-10/12  bg-[#EF363A] rounded-full ">
-                            <a
-                              className="text-[#F4F4F4] text-sm "
+                            <Link
+                              className="text-[#F4F4F4] text-sm"
+                              passHref
                               href="/checkout"
                             >
                               Proceed to Checkout
-                            </a>
+                            </Link>
                           </button>
                         </div>
                       ) : (

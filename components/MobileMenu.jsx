@@ -5,6 +5,7 @@ import {
   XMarkIcon,
   ChevronUpIcon,
 } from "@heroicons/react/20/solid";
+import Link from "next/link";
 
 const Categories = [
   {
@@ -82,7 +83,7 @@ function MobileMenu() {
                     className={`flex justify-between flex-row ${
                       openCategory === index
                         ? "border-b-0"
-                        : "border-b border-[#0E101B]/30"
+                        : "border-b border-[#0E101B]/"
                     } text-sm font-normal items-center`}
                     onClick={() => toggleSubmenu(index)}
                   >
@@ -109,7 +110,9 @@ function MobileMenu() {
               ))}
             </div>
             <button className="text-sm p-2 rounded-full text-white mx-auto font-medium bg-[#EF363A] w-2/3 absolute bottom-8 left-1/2 transform -translate-x-1/2">
-              <a href="/">Continue Shopping</a>
+              <Link href="/" passHref>
+                Continue Shopping
+              </Link>
             </button>
           </div>
         </div>

@@ -1,8 +1,9 @@
 import Link from "next/link";
 import React, { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
 import { CheckIcon } from "@heroicons/react/20/solid";
 import Terms from "@/components/Terms";
+import Image from "next/image";
 
 function signUp() {
   const [password, setPassword] = useState("");
@@ -39,10 +40,12 @@ function signUp() {
   return (
     <main className="flex flex-col items-center  bg-[#F4F4F4] justify-center min-h-screen p-4 lg:p-24">
       <div className="items-center justify-start  pb-12">
-        <img
+        <Image
           src="/images/Bigstore Mobile.svg"
           alt="Bigstore Logo "
           className="md:w-25 md:h-20 "
+          width={200} // Set the width value based on the actual image width
+          height={20} // Set the height value based on the actual image height
         />
       </div>
 
@@ -52,8 +55,8 @@ function signUp() {
             New account, who this?
           </h4>
           <h6 className="md:text-base text-sm text-start">
-            Let’s set you up with a new account. <br /> Create a strong password in
-            order to keep your account secure.
+            Let’s set you up with a new account. <br /> Create a strong password
+            in order to keep your account secure.
           </h6>
           <h6 className="text-base text-center"></h6>
           <div className="flex flex-col lg:flex-row my-6 justify-between lg:items-center">

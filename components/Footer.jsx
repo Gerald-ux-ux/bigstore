@@ -56,7 +56,7 @@ function Footer() {
   
   return (
     <>
-      <div className="flex justify-between   flex-col w-11/12">
+      <footer className="flex justify-between    flex-col w-11/12">
         {/* <BrandPromises /> */}
         <div className="grid grid-cols-2 md:flex justify-between space-x-7 space-y-8 ">
           <div className=" row-span-2  justify-center flex flex-col   ">
@@ -205,7 +205,7 @@ function Footer() {
           </div>
         </div>
         <Year />
-      </div>
+      </footer>
     </>
   );
 }

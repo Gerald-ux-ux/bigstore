@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { ChevronDownIcon, CheckCircleIcon } from "@heroicons/react/20/solid";
 import Terms from "@/components/Terms";
+import Image from "next/image";
 
 function resetPassword() {
   const [iconColor, setIconColor] = useState("#8B96A5");
@@ -23,10 +24,12 @@ function resetPassword() {
   return (
     <main className="flex flex-col items-center  bg-[#F4F4F4] justify-center min-h-screen p-4 lg:p-24">
       <div className="items-center justify-start  pb-12">
-        <img
+        <Image
           src="/images/Bigstore Mobile.svg"
           alt="Bigstore Logo "
           className="md:w-25 md:h-20 "
+          width={200} // Set the width value based on the actual image width
+          height={20} // Set the height value based on the actual image height
         />
       </div>
 
@@ -52,10 +55,12 @@ function resetPassword() {
           <form onSubmit={handleSubmit}>
             <div className="flex flex-row my-6 justify-center items-center ">
               <div className="bg-[#F4F4F4] p-4  md:p-6 md:w-3/12 w-5/12  rounded-full justify-center rounded-e-none flex flex-row items-center">
-                <img
+                <Image
                   src="/images/kenya.png"
                   alt="Kenya Flag"
                   className="w-6 h-6 mr-2 rounded-full"
+                  width={200} // Set the width value based on the actual image width
+                  height={20} // Set the height value based on the actual image height
                 />
                 <h6 className="text-center">+254</h6>
               </div>

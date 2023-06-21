@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const mobile = [
   {
@@ -50,17 +51,15 @@ const images = [
 function BrandPromises() {
   return (
     <>
-      <div className="hidden sm:flex w-11/12  justify-between mb-4 mt-4">
-        {images.map((image) => (
-          <div className="items-center justify-center text-center flex flex-col">
-            <img
-              className="items-center justify-center"
-              src={image.src}
-              alt={image.alt}
-              style={{ width: "50px", height: "50px" }}
-            />
+      <div className="hidden sm:flex w-11/12 justify-between mb-4 mt-4">
+        {images.map((image, index) => (
+          <div
+            key={index}
+            className="items-center justify-center text-center flex flex-col"
+          >
+            <Image src={image.src} alt={image.alt} width={50} height={50} />
             <p
-              className="font-semibold text-center "
+              className="font-semibold text-center"
               dangerouslySetInnerHTML={{ __html: image.caption }}
             ></p>
           </div>
@@ -68,16 +67,15 @@ function BrandPromises() {
       </div>
 
       <div>
-        <div className=" flex sm:hidden justify-between mb-4 mt-4">
-          {mobile.map((image) => (
-            <div className="items-center justify-center text-center flex flex-col">
-              <img
-                className="items-center justify-center"
-                src={image.src}
-                alt={image.alt}
-              />
+        <div className="flex sm:hidden justify-between mb-4 mt-4">
+          {mobile.map((image, index) => (
+            <div
+              key={index}
+              className="items-center justify-center text-center flex flex-col"
+            >
+              <Image src={image.src} alt={image.alt} width={50} height={50} />
               <p
-                className="font-semibold text-center mt-4 "
+                className="font-semibold text-center mt-4"
                 dangerouslySetInnerHTML={{ __html: image.caption }}
                 style={{ fontSize: "8px" }}
               ></p>
