@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import React, { useEffect, useState } from "react";
 
 
-function products() {
+function Products() {
 
   return (
     <>

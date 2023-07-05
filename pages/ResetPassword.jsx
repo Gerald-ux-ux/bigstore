@@ -5,7 +5,7 @@ import { ChevronDownIcon, CheckCircleIcon } from "@heroicons/react/20/solid";
 import Terms from "@/components/Terms";
 import Image from "next/image";
 
-function resetPassword() {
+function ResetPassword() {
   const [iconColor, setIconColor] = useState("#8B96A5");
 
   const handleClick = () => {
@@ -84,4 +84,4 @@ function resetPassword() {
   );
 }
 
-export default resetPassword;
+export default ResetPassword;

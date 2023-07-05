@@ -4,7 +4,7 @@ import Link from "next/link";
 import Terms from "@/components/Terms";
 import Image from "next/image";
 
-function phoneOtp() {
+function PhoneOtp() {
   const router = useRouter();
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -62,4 +62,4 @@ function phoneOtp() {
   );
 }
 
-export default phoneOtp;
+export default PhoneOtp;

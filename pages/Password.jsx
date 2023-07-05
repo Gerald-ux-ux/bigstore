@@ -5,7 +5,7 @@ import { CheckIcon } from "@heroicons/react/20/solid";
 import Terms from "@/components/Terms";
 import Image from "next/image";
 
-function password() {
+function Password() {
   const [checked, setChecked] = useState(false);
   const handleCheckboxChange = () => {
     setChecked(!checked);
@@ -94,4 +94,4 @@ function password() {
   );
 }
 
-export default password;
+export default  Password;

@@ -4,7 +4,7 @@ import Link from "next/link";
 import Terms from "@/components/Terms";
 import Image from "next/image";
 
-function resetPasswordOtp() {
+function ResetPasswordOtp() {
   const router = useRouter();
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -62,4 +62,4 @@ function resetPasswordOtp() {
   );
 }
 
-export default resetPasswordOtp;
+export default ResetPasswordOtp;
